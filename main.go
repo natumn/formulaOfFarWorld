@@ -1,9 +1,11 @@
 package main
 
-import (
-	"fmt"
-)
+import ()
 
 func main() {
 
+}
+
+func calc(formula string) int {
+	return 75
 }

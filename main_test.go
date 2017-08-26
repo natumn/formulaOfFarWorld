@@ -5,8 +5,10 @@ import (
 )
 
 func TestCalculator(t *testing.T) {
-	answer := calculator("15*5")
-	if answer == nil {
-		t.Fatal("not calculator.")
+	answer := calc("15*5")
+	if answer != 75 {
+		t.Fatal("miss calculator.")
 	}
+
+	t.Log("clear test: ", answer)
 }
