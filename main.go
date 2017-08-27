@@ -1,23 +1,25 @@
 package main
 
 import (
-	"fmt"
 	"go/token"
 	"go/types"
 	"log"
+	"strconv"
 )
 
 func main() {
 }
 
-func calc(formula string) interface{} {
+func calc(formula string) int {
 	answer, err := eval(formula)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(answer.Type)
-	fmt.Println(answer.Value)
-	return answer.Value
+	intAnswer, err := strconv.Atoi(answer.Value.ExactString())
+	if err != nil {
+		log.Fatal(err)
+	}
+	return intAnswer
 }
 
 func eval(expr string) (types.TypeAndValue, error) {
